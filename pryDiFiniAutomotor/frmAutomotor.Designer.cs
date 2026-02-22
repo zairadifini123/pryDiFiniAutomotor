@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAutomotor));
             lblTitulo = new Label();
             lblEdad = new Label();
             txtEdad = new TextBox();
@@ -43,6 +44,7 @@
             rdbPremium = new RadioButton();
             btnValidar = new Button();
             btnSalir = new Button();
+            lstResultados = new ListBox();
             SuspendLayout();
             // 
             // lblTitulo
@@ -97,6 +99,7 @@
             txtAccidentes.Name = "txtAccidentes";
             txtAccidentes.Size = new Size(100, 23);
             txtAccidentes.TabIndex = 6;
+            txtAccidentes.KeyPress += txtAccidentes_KeyPress_1;
             // 
             // v
             // 
@@ -120,6 +123,7 @@
             // 
             // cmbLicencia
             // 
+            cmbLicencia.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbLicencia.FormattingEnabled = true;
             cmbLicencia.Items.AddRange(new object[] { "SI", "NO" });
             cmbLicencia.Location = new Point(494, 85);
@@ -181,6 +185,7 @@
             btnValidar.TabIndex = 13;
             btnValidar.Text = "Validar";
             btnValidar.UseVisualStyleBackColor = true;
+            btnValidar.Click += btnValidar_Click;
             // 
             // btnSalir
             // 
@@ -190,12 +195,22 @@
             btnSalir.TabIndex = 14;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // lstResultados
+            // 
+            lstResultados.FormattingEnabled = true;
+            lstResultados.Location = new Point(12, 349);
+            lstResultados.Name = "lstResultados";
+            lstResultados.Size = new Size(631, 154);
+            lstResultados.TabIndex = 15;
             // 
             // frmAutomotor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(656, 450);
+            ClientSize = new Size(656, 539);
+            Controls.Add(lstResultados);
             Controls.Add(btnSalir);
             Controls.Add(btnValidar);
             Controls.Add(rdbPremium);
@@ -212,6 +227,7 @@
             Controls.Add(lblEdad);
             Controls.Add(lblTitulo);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmAutomotor";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAutomotor";
@@ -236,5 +252,6 @@
         private RadioButton rdbPremium;
         private Button btnValidar;
         private Button btnSalir;
+        private ListBox lstResultados;
     }
 }
